@@ -1,16 +1,7 @@
-import { useState } from 'react'
-import './App.css'
+import MainLayout from './layout/MainLayout'
 
- function App() {
-  return (
-    <div className="min-h-screen bg-slate-100 flex items-center justify-center">
-
-        <h1 className="text-3xl text-black font-bold ">
-         Initial Set up
-        </h1>
-      
-    </div>
-  )
+function App() {
+  return <MainLayout />
 }
 
 export default App
