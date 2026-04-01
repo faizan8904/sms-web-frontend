@@ -1,0 +1,540 @@
+/* ============================================
+   Timetable Styles
+   ============================================ */
+
+.timetable-page {
+    padding: 0;
+}
+
+/* Control Bar */
+.tt-controls {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 28px;
+}
+
+.tt-controls__left {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.tt-controls__divider {
+    width: 1px;
+    height: 28px;
+    background: #e2e8f0;
+}
+
+.tt-controls__title {
+    font-family: 'Manrope', 'Inter', sans-serif;
+    font-size: 22px;
+    font-weight: 800;
+    color: #1e1b4b;
+}
+
+.tt-controls__right {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+/* Select */
+.tt-select-wrapper {
+    position: relative;
+}
+
+.tt-select {
+    appearance: none;
+    background: #ffffff;
+    border: none;
+    border-radius: 12px;
+    padding: 10px 44px 10px 18px;
+    font-size: 14px;
+    font-weight: 600;
+    font-family: 'Manrope', 'Inter', sans-serif;
+    color: #1e1b4b;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+    transition: box-shadow 0.2s ease;
+}
+
+.tt-select:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(124, 58, 237, 0.3);
+}
+
+.tt-select-icon {
+    position: absolute;
+    right: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+    color: #7c3aed;
+}
+
+/* Buttons */
+.tt-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 20px;
+    border-radius: 12px;
+    border: none;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.tt-btn--secondary {
+    background: #ffffff;
+    color: #64748b;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+}
+
+.tt-btn--secondary:hover {
+    background: #f8fafc;
+    color: #475569;
+}
+
+.tt-btn--primary {
+    background: linear-gradient(135deg, #7c3aed 0%, #6d28d9 100%);
+    color: #ffffff;
+    border-radius: 24px;
+    padding: 10px 24px;
+    box-shadow: 0 4px 16px rgba(124, 58, 237, 0.25);
+}
+
+.tt-btn--primary:hover {
+    transform: scale(1.02);
+    box-shadow: 0 6px 20px rgba(124, 58, 237, 0.35);
+}
+
+.tt-btn--primary:active {
+    transform: scale(0.97);
+}
+
+/* Grid Container */
+.tt-scroll-wrapper {
+    overflow-x: auto;
+    padding-bottom: 12px;
+}
+
+.tt-scroll-wrapper::-webkit-scrollbar {
+    height: 6px;
+}
+
+.tt-scroll-wrapper::-webkit-scrollbar-thumb {
+    background: #ddd6fe;
+    border-radius: 4px;
+}
+
+.tt-grid-container {
+    min-width: 1100px;
+    border-radius: 14px;
+    overflow: hidden;
+    background: #ffffff;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
+    border: 1px solid #e9e5f5;
+}
+
+.tt-grid {
+    display: grid;
+    background: #e9e5f5;
+    gap: 1px;
+}
+
+/* Header Cells */
+.tt-header-cell {
+    background: #faf9fe;
+    padding: 12px 8px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+}
+
+.tt-header-corner {
+    background: #faf9fe;
+}
+
+.tt-header-cell--break {
+    background: rgba(124, 58, 237, 0.06);
+}
+
+.tt-header-label {
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: #94a3b8;
+}
+
+.tt-header-cell--break .tt-header-label {
+    color: #7c3aed;
+    font-weight: 800;
+    letter-spacing: 0.18em;
+}
+
+.tt-header-time {
+    font-size: 13px;
+    font-weight: 700;
+    font-family: 'Manrope', 'Inter', sans-serif;
+    color: #1e1b4b;
+}
+
+.tt-header-time--break {
+    color: #7c3aed;
+}
+
+/* Day Cells */
+.tt-day-cell {
+    background: #faf9fe;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+}
+
+.tt-day-label {
+    font-family: 'Manrope', 'Inter', sans-serif;
+    font-weight: 800;
+    font-size: 16px;
+    text-transform: uppercase;
+    letter-spacing: -0.02em;
+    color: rgba(30, 27, 75, 0.3);
+    transform: rotate(-12deg);
+}
+
+/* Regular Cells */
+.tt-cell {
+    background: #ffffff;
+    padding: 14px 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 90px;
+}
+
+/* Break Cell */
+.tt-cell--break {
+    background: rgba(124, 58, 237, 0.06);
+    align-items: center;
+}
+
+.tt-break-icon {
+    color: rgba(124, 58, 237, 0.3);
+    transform: rotate(-90deg);
+}
+
+/* Empty Cell */
+.tt-cell--empty {
+    border: 2px dashed rgba(148, 163, 184, 0.25);
+    margin: 6px;
+    border-radius: 10px;
+    background: transparent;
+    align-items: center;
+    cursor: pointer;
+    transition: border-color 0.2s ease;
+}
+
+.tt-cell--empty:hover {
+    border-color: rgba(124, 58, 237, 0.4);
+}
+
+.tt-empty-icon {
+    color: rgba(148, 163, 184, 0.35);
+    transition: color 0.2s ease;
+}
+
+.tt-cell--empty:hover .tt-empty-icon {
+    color: rgba(124, 58, 237, 0.5);
+}
+
+/* Subject Card */
+.tt-subject-card {
+    position: relative;
+    overflow: hidden;
+}
+
+.tt-subject-accent {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    border-radius: 9999px 9999px 0 0;
+    filter: blur(0.5px);
+    box-shadow: 0 3px 10px var(--card-shadow, rgba(0, 0, 0, 0.1));
+}
+
+.tt-subject-name {
+    font-size: 13px;
+    font-weight: 700;
+    color: #1e1b4b;
+    line-height: 1.3;
+    margin-bottom: 4px;
+}
+
+.tt-subject-teacher {
+    font-size: 10px;
+    color: #94a3b8;
+    line-height: 1.4;
+}
+
+.tt-subject-room {
+    font-size: 10px;
+    font-weight: 700;
+    color: #7c3aed;
+    line-height: 1.4;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .tt-controls {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .tt-controls__title {
+        font-size: 18px;
+    }
+
+    .tt-controls__divider {
+        display: none;
+    }
+}
+
+/* ============================================
+   Edit Mode Styles
+   ============================================ */
+
+.tt-select--layout {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+}
+
+.tt-btn--active {
+    background: #10b981;
+    /* Green color for active edit mode */
+    box-shadow: 0 4px 16px rgba(16, 185, 129, 0.25);
+}
+
+.tt-btn--active:hover {
+    box-shadow: 0 6px 20px rgba(16, 185, 129, 0.35);
+}
+
+.tt-slot-edit-btn {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    color: #64748b;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    opacity: 0;
+    transform: scale(0.9);
+    transition: all 0.2s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    z-index: 10;
+}
+
+.tt-subject-card:hover .tt-slot-edit-btn {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.tt-slot-edit-btn:hover {
+    background: #f8fafc;
+    color: #7c3aed;
+    border-color: #ddd6fe;
+}
+
+/* Modal Styles */
+.tt-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(15, 23, 42, 0.4);
+    backdrop-filter: blur(4px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.tt-modal {
+    background: #ffffff;
+    border-radius: 16px;
+    width: 100%;
+    max-width: 440px;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    overflow: hidden;
+}
+
+.tt-modal-header {
+    padding: 20px 24px;
+    border-bottom: 1px solid #e2e8f0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.tt-modal-header h3 {
+    font-family: 'Manrope', 'Inter', sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: #1e1b4b;
+    margin: 0;
+}
+
+.tt-modal-close {
+    background: transparent;
+    border: none;
+    color: #94a3b8;
+    cursor: pointer;
+    padding: 4px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+}
+
+.tt-modal-close:hover {
+    background: #f1f5f9;
+    color: #475569;
+}
+
+.tt-modal-body {
+    padding: 24px;
+}
+
+.tt-form-group {
+    margin-bottom: 20px;
+}
+
+.tt-form-group:last-child {
+    margin-bottom: 0;
+}
+
+.tt-form-group label {
+    display: block;
+    font-size: 13px;
+    font-weight: 600;
+    color: #475569;
+    margin-bottom: 8px;
+}
+
+.tt-input {
+    width: 100%;
+    padding: 10px 12px;
+    border-radius: 8px;
+    border: 1px solid #cbd5e1;
+    background: #ffffff;
+    font-size: 14px;
+    color: #1e293b;
+    transition: all 0.2s ease;
+}
+
+.tt-input:focus {
+    outline: none;
+    border-color: #7c3aed;
+    box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.1);
+}
+
+.tt-modal-footer {
+    padding-top: 24px;
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    border-top: 1px solid #f1f5f9;
+    margin-top: 8px;
+}
+
+/* ============================================
+   Print Styles
+   ============================================ */
+
+.tt-print-title {
+    display: none;
+    text-align: center;
+    font-family: 'Manrope', 'Inter', sans-serif;
+    font-size: 24px;
+    font-weight: 800;
+    color: #1e1b4b;
+    margin-bottom: 24px;
+}
+
+@media print {
+    @page {
+        size: A4 landscape;
+        margin: 10mm;
+    }
+
+    body {
+        margin: 0;
+        padding: 0;
+        background: #fff;
+    }
+
+    /* Hide unnecessary UI elements */
+    .sidebar,
+    .topbar,
+    .tt-no-print,
+    .tt-controls,
+    .tt-slot-edit-btn {
+        display: none !important;
+    }
+
+    /* Reveal Print Title */
+    .tt-print-title {
+        display: block !important;
+    }
+
+    /* Adjust Layout Container */
+    .layout,
+    .content,
+    .timetable-page {
+        display: block;
+        height: auto;
+        min-height: auto;
+        width: 100%;
+        margin: 0 !important;
+        padding: 0 !important;
+        overflow: visible !important;
+    }
+
+    /* Fix Grid Scrolling */
+    .tt-scroll-wrapper {
+        overflow: visible !important;
+        width: 100% !important;
+    }
+
+    .tt-grid-container {
+        border: none;
+        box-shadow: none;
+        width: 100% !important;
+        min-width: 0 !important;
+        /* let it shrink/fit */
+    }
+
+    /* Ensure Colors Print */
+    * {
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+    }
+}

@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { Outlet } from 'react-router-dom';
 import Sidebar from './Sidebar';
 import Topbar from './Topbar';
 import './layout.css';
@@ -49,9 +50,7 @@ export default function MainLayout() {
                         : 'content--sidebar-expanded'
                     }`}
             >
-                <div className="content__placeholder">
-                    Content goes here
-                </div>
+                <Outlet />
             </main>
         </div>
     );

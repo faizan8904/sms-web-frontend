@@ -1,3 +1,4 @@
+import { NavLink } from 'react-router-dom';
 import {
     LayoutDashboard,
     GraduationCap,
@@ -15,16 +16,16 @@ import {
 } from 'lucide-react';
 
 const menuItems = [
-    { icon: LayoutDashboard, label: 'Dashboard' },
-    { icon: GraduationCap, label: 'Student' },
-    { icon: Users, label: 'Teacher' },
-    { icon: UserCog, label: 'Staff' },
-    { icon: CalendarClock, label: 'Time Table' },
-    { icon: Sparkles, label: 'Generator' },
-    { icon: ClipboardCheck, label: 'Attendance' },
-    { icon: FileText, label: 'Exam' },
-    { icon: ScrollText, label: 'Logs' },
-    { icon: Settings, label: 'Setting' },
+    { icon: LayoutDashboard, label: 'Dashboard', href: '/' },
+    { icon: GraduationCap, label: 'Student', href: '/student' },
+    { icon: Users, label: 'Teacher', href: '/teacher' },
+    { icon: UserCog, label: 'Staff', href: '/staff' },
+    { icon: CalendarClock, label: 'Time Table', href: '/timetable' },
+    { icon: Sparkles, label: 'Generator', href: '/generator' },
+    { icon: ClipboardCheck, label: 'Attendance', href: '/attendance' },
+    { icon: FileText, label: 'Exam', href: '/exam' },
+    { icon: ScrollText, label: 'Logs', href: '/logs' },
+    { icon: Settings, label: 'Setting', href: '/settings' },
 ];
 
 export default function Sidebar({
@@ -76,17 +77,21 @@ export default function Sidebar({
 
                 {/* Navigation */}
                 <nav className="sidebar__nav">
-                    {menuItems.map((item, index) => {
+                    {menuItems.map((item) => {
                         const Icon = item.icon;
                         return (
-                            <button
+                            <NavLink
                                 key={item.label}
-                                className={`sidebar__menu-item ${index === 0 ? 'sidebar__menu-item--active' : ''}`}
+                                to={item.href}
+                                className={({ isActive }) =>
+                                    `sidebar__menu-item ${isActive ? 'sidebar__menu-item--active' : ''}`
+                                }
                                 title={isCollapsed ? item.label : undefined}
+                                onClick={onMobileClose}
                             >
                                 <Icon className="sidebar__menu-icon" />
                                 <span className="sidebar__menu-label">{item.label}</span>
-                            </button>
+                            </NavLink>
                         );
                     })}
                 </nav>
