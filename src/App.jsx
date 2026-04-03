@@ -6,7 +6,7 @@ import Student from './features/student/pages/Student';
 import Teacher from './features/teacher/pages/Teacher';
 import Staff from './features/staff/pages/Staff';
 import Parent from './features/parent/pages/Parent';
-import Generator from './features/generator/pages/Generator';
+import Design from './features/design/pages/Design';
 import Attendance from './features/attendance/pages/Attendance';
 import Exam from './features/exam/pages/Exam';
 import Log from './features/log/pages/Log';
@@ -26,7 +26,7 @@ function App() {
           <Route path="staff" element={<Staff />} />
           <Route path="parent" element={<Parent />} />
           <Route path="timetable" element={<TimeTable />} />
-          <Route path="generator" element={<Generator />} />
+          <Route path="design/*" element={<Design />} />
           <Route path="attendance" element={<Attendance />} />
           <Route path="exam" element={<Exam />} />
           <Route path="logs" element={<Log />} />

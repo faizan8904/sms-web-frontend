@@ -1,0 +1,875 @@
+/* idCard.css */
+
+.id-designer-wrapper {
+    padding-bottom: 2rem;
+    height: auto;
+    min-height: 100%;
+}
+
+/* Main Combined Box */
+.id-designer-combined-box {
+    display: flex;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+    border: 1px solid #f3f4f6;
+    overflow: hidden;
+    min-height: 580px;
+    max-height: calc(100vh - 160px);
+    height: 100%;
+    align-items: stretch;
+}
+
+/* Left Panel: Preview */
+.id-preview-panel {
+    flex: 2;
+    background: #fdfdfd;
+    display: flex;
+    flex-direction: column;
+    border-right: 1px solid #e5e7eb;
+}
+
+.preview-toolbar {
+    padding: 16px;
+    border-bottom: 1px solid #e5e7eb;
+    background: #ffffff;
+    display: flex;
+    justify-content: center;
+}
+
+.preview-canvas {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: radial-gradient(#e5e7eb 1px, transparent 1px);
+    background-size: 20px 20px;
+    padding: 24px;
+    overflow: auto;
+}
+
+/* Right Panel: Controls / Form */
+.id-designer-controls {
+    flex: 1;
+    min-width: 320px;
+    max-width: 380px;
+    background: #ffffff;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    overflow-y: auto;
+}
+
+.designer-controls-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.75rem;
+    align-items: flex-end;
+}
+
+.control-group {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.control-group label {
+    font-size: 14px;
+    font-weight: 600;
+    color: #4b5563;
+}
+
+.designer-input {
+    padding: 10px 12px;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    font-size: 14px;
+    color: #1f2937;
+    background-color: #f9fafb;
+    outline: none;
+    transition: all 0.2s;
+}
+
+.designer-input:focus {
+    border-color: #7c3aed;
+    box-shadow: 0 0 0 2px rgba(124, 58, 237, 0.1);
+    background-color: #ffffff;
+}
+
+/* Theme Selector Buttons */
+.theme-selector {
+    display: flex;
+    border-radius: 6px;
+    overflow: hidden;
+    border: 1px solid #d1d5db;
+    height: 32px;
+}
+
+.theme-btn {
+    flex: 1;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+}
+
+.theme-btn:hover {
+    filter: brightness(1.1);
+}
+
+.theme-btn.active {
+    box-shadow: inset 0 0 0 3px #06b6d4;
+    /* cyan border */
+    position: relative;
+    z-index: 1;
+}
+
+.theme-btn-purple {
+    background: linear-gradient(135deg, #a855f7, #7e22ce);
+}
+
+.theme-btn-green {
+    background: linear-gradient(135deg, #22c55e, #15803d);
+}
+
+.theme-btn-pink {
+    background: linear-gradient(135deg, #ec4899, #be185d);
+}
+
+.theme-btn-black {
+    background: linear-gradient(135deg, #4b5563, #1f2937);
+}
+
+.theme-btn-golden {
+    background: linear-gradient(135deg, #eab308, #ca8a04);
+}
+
+
+.designer-toggle-group {
+    display: flex;
+    background: #f3f4f6;
+    border-radius: 6px;
+    padding: 4px;
+}
+
+.designer-toggle-btn {
+    flex: 1;
+    padding: 6px 10px;
+    border: none;
+    background: transparent;
+    font-size: 13px;
+    font-weight: 500;
+    color: #4b5563;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.designer-toggle-btn.active {
+    background: #ffffff;
+    color: #7c3aed;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+/* File Upload custom styles */
+.upload-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+
+.file-upload-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.designer-file-input {
+    display: none;
+}
+
+.file-upload-label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    gap: 4px;
+    background: #f3f4f6;
+    color: #4b5563;
+    padding: 8px 10px;
+    border-radius: 6px;
+    font-size: 12px !important;
+    font-weight: 500 !important;
+    cursor: pointer;
+    border: 1px dashed #d1d5db;
+    transition: all 0.2s;
+}
+
+.file-upload-label:hover {
+    background: #eaddff;
+    border-color: #7c3aed;
+    color: #7c3aed;
+}
+
+.upload-success-text {
+    font-size: 11px;
+    color: #10b981;
+    font-weight: 600;
+}
+
+.fields-grid-checkboxes {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    margin-top: 2px;
+}
+
+.designer-checkbox-label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px !important;
+    font-weight: 400 !important;
+    color: #374151 !important;
+    cursor: pointer;
+}
+
+.designer-checkbox-label input[type="checkbox"] {
+    accent-color: #7c3aed;
+    width: 16px;
+    height: 16px;
+}
+
+.designer-actions {
+    margin-top: auto;
+    padding-top: 12px;
+    border-top: 1px solid #e5e7eb;
+}
+
+.designer-save-btn {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background-color: #7c3aed;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.designer-save-btn:hover {
+    background-color: #6d28d9;
+}
+
+
+/* Base Card Preview */
+.id-card-preview {
+    background: var(--card-bg-primary, #ffffff);
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    border: 1px solid var(--card-border, #e5e7eb);
+    display: flex;
+    flex-direction: column;
+}
+
+/* Card Shape/Size */
+.id-card-preview.portrait.standard {
+    width: 260px;
+    height: 410px;
+    border-radius: 12px;
+}
+
+.id-card-preview.landscape.standard {
+    width: 410px;
+    height: 260px;
+    border-radius: 12px;
+}
+
+.id-card-preview.portrait.compact {
+    width: 230px;
+    height: 370px;
+    border-radius: 10px;
+}
+
+.id-card-preview.landscape.compact {
+    width: 370px;
+    height: 230px;
+    border-radius: 10px;
+}
+
+
+/* ===========================
+   THEMES CSS VARIABLES
+============================== */
+.theme-purple {
+    --card-header-bg: linear-gradient(135deg, #a855f7 0%, #7e22ce 100%);
+    --card-accent: #f3e8ff;
+    --card-text-primary: #1e1b4b;
+    --card-border: #e9d5ff;
+    --card-photo-border: #d8b4fe;
+    --card-icon-color: #9333ea;
+}
+
+.theme-green {
+    --card-header-bg: linear-gradient(135deg, #22c55e 0%, #15803d 100%);
+    --card-accent: #dcfce7;
+    --card-text-primary: #064e3b;
+    --card-border: #bbf7d0;
+    --card-photo-border: #86efac;
+    --card-icon-color: #16a34a;
+}
+
+.theme-pink {
+    --card-header-bg: linear-gradient(135deg, #ec4899 0%, #be185d 100%);
+    --card-accent: #fce7f3;
+    --card-text-primary: #831843;
+    --card-border: #fbcfe8;
+    --card-photo-border: #f9a8d4;
+    --card-icon-color: #db2777;
+}
+
+.theme-black {
+    --card-header-bg: linear-gradient(135deg, #4b5563 0%, #1f2937 100%);
+    --card-accent: #f3f4f6;
+    --card-text-primary: #111827;
+    --card-border: #e5e7eb;
+    --card-photo-border: #d1d5db;
+    --card-icon-color: #4b5563;
+}
+
+.theme-golden {
+    --card-header-bg: linear-gradient(135deg, #eab308 0%, #ca8a04 100%);
+    --card-accent: #fef9c3;
+    --card-text-primary: #713f12;
+    --card-border: #fef08a;
+    --card-photo-border: #fde047;
+    --card-icon-color: #ca8a04;
+}
+
+
+/* Front/Back Shared */
+.id-card-content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    background: #ffffff;
+    position: relative;
+    z-index: 1;
+}
+
+/* Background shape */
+.id-card-content.front::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: -20%;
+    width: 140%;
+    height: 140%;
+    background-color: var(--card-accent);
+    opacity: 0.3;
+    border-radius: 50%;
+    z-index: -1;
+    transform: translateY(20%) rotate(-10deg);
+}
+
+.card-header {
+    background: var(--card-header-bg);
+    color: white;
+    padding: 10px 12px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-bottom: 2px solid var(--card-photo-border);
+}
+
+.school-logo-placeholder {
+    width: 30px;
+    height: 30px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    font-weight: bold;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.school-logo-img {
+    height: 30px;
+    width: auto;
+    max-width: 80px;
+    border-radius: 4px;
+    object-fit: contain;
+}
+
+.school-name {
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+}
+
+/* Base card body */
+.id-card-content.front .card-body {
+    flex: 1;
+    padding: 10px 12px;
+    display: flex;
+    flex-direction: column;
+    /* DEFAULT IS COLUMN causing landscape to break */
+    gap: 8px;
+    overflow: hidden;
+}
+
+/* Photo and QR Base Row */
+.photo-qr-row {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-photo,
+.card-qr {
+    width: 65px;
+    height: 65px;
+    /* Perfect Square */
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #ffffff;
+    border: 2px solid var(--card-photo-border);
+    border-radius: 6px;
+    color: var(--card-icon-color);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+}
+
+/* =======================================
+   SPECIFICITY FIXES FOR ORIENTATIONS
+   ======================================= */
+
+/* Portrait Layout overrides */
+.id-card-preview.portrait .id-card-content.front .card-body {
+    flex-direction: column;
+}
+
+.id-card-preview.portrait .photo-qr-row {
+    flex-direction: row;
+    margin-bottom: 4px;
+}
+
+.id-card-preview.portrait .card-details {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* Landscape Layout Overrides 
+   We explicitly target `.id-card-preview.landscape .id-card-content.front .card-body` 
+   so the specificity overrides the `column` default safely.
+*/
+.id-card-preview.landscape .id-card-content.front .card-body {
+    flex-direction: row;
+    /* Put photo/qr on the left side */
+    align-items: center;
+    padding: 8px 12px;
+    gap: 16px;
+    /* Increased gap between photo block and details grid */
+}
+
+.id-card-preview.landscape .photo-qr-row {
+    flex-direction: column;
+    /* Stack Photo above QR perfectly */
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin: 0;
+    width: auto;
+}
+
+.id-card-preview.landscape .card-details {
+    flex: 1;
+    /* details map takes the left space perfectly */
+    display: flex;
+    flex-direction: column;
+}
+
+/* Adjust sizes for compact sizes to fit perfectly */
+.id-card-preview.compact.portrait .card-photo,
+.id-card-preview.compact.portrait .card-qr {
+    width: 50px;
+    height: 50px;
+}
+
+.id-card-preview.compact.landscape .card-photo,
+.id-card-preview.compact.landscape .card-qr {
+    width: 50px;
+    height: 50px;
+}
+
+.id-card-preview.landscape.standard .card-photo,
+.id-card-preview.landscape.standard .card-qr {
+    width: 60px;
+    height: 60px;
+}
+
+
+/* ================================= */
+/* FLEX WRAP GRID FOR DETAILS        */
+/* ================================= */
+.details-grid {
+    display: flex;
+    flex-wrap: wrap;
+    /* Allows auto expansion when elements are hidden */
+    gap: 4px;
+    width: 100%;
+}
+
+.grid-cell {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid var(--card-border);
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 3px 6px;
+    border-radius: 4px;
+    flex: 1 1 calc(50% - 4px);
+    /* takes half width or full width if alone! */
+    min-width: 35%;
+}
+
+.grid-cell.col-span-2 {
+    flex: 1 1 100%;
+}
+
+.grid-cell.title-cell {
+    background: var(--card-accent);
+    align-items: center;
+    border: 1px solid var(--card-photo-border);
+    padding: 4px;
+}
+
+.grid-cell h3 {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--card-text-primary);
+    margin: 0;
+    text-align: center;
+}
+
+.cell-label {
+    font-size: 8px;
+    font-weight: 700;
+    color: #6b7280;
+    text-transform: uppercase;
+    margin-bottom: 2px;
+}
+
+.cell-value {
+    font-size: 9px;
+    font-weight: 600;
+    color: #1f2937;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.grid-cell.col-span-2 .cell-value {
+    white-space: normal;
+    /* Address can wrap */
+}
+
+
+/* Details Typography & Spacing Overrides for Landscape/Compact */
+.id-card-preview.landscape .grid-cell {
+    padding: 3px 6px;
+}
+
+.id-card-preview.landscape .cell-label {
+    font-size: 7.5px;
+    margin-bottom: 1px;
+    line-height: 1;
+}
+
+.id-card-preview.landscape .cell-value {
+    font-size: 9px;
+    line-height: 1.2;
+}
+
+.id-card-preview.landscape .grid-cell h3 {
+    font-size: 13px;
+    margin-bottom: 1px;
+}
+
+.id-card-preview.landscape .details-grid {
+    gap: 4px;
+}
+
+.id-card-preview.compact .id-card-content.front .card-body {
+    padding: 10px 12px;
+}
+
+.id-card-preview.compact .grid-cell {
+    padding: 3px 5px;
+}
+
+.id-card-preview.compact .cell-label {
+    font-size: 7.5px;
+    margin-bottom: 1px;
+}
+
+.id-card-preview.compact .cell-value {
+    font-size: 9px;
+    line-height: 1.1;
+}
+
+.id-card-preview.compact .grid-cell h3 {
+    font-size: 12px;
+    margin-bottom: 1px;
+}
+
+/* Extremely precise tuning for Compact Landscape to prevent vertical overflow */
+.id-card-preview.compact.landscape .id-card-content.front .card-body {
+    padding: 4px 10px;
+    gap: 8px;
+}
+
+.id-card-preview.compact.landscape .grid-cell {
+    padding: 2px 4px;
+}
+
+.id-card-preview.compact.landscape .cell-label {
+    font-size: 6.5px;
+    margin-bottom: 0px;
+}
+
+.id-card-preview.compact.landscape .cell-value {
+    font-size: 8px;
+    line-height: 1.1;
+}
+
+.id-card-preview.compact.landscape .grid-cell h3 {
+    font-size: 11px;
+    margin-bottom: 0px;
+}
+
+.id-card-preview.compact.landscape .details-grid {
+    gap: 2px;
+}
+
+
+/* Full Width Bottom Bar */
+.curved-footer {
+    height: 6px;
+    width: 100%;
+    margin-top: auto;
+    background: var(--card-header-bg);
+}
+
+/* Back View Layout */
+.id-card-content.back {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    /* Removed padding to allow header/footer to be full width flush */
+    background-color: #ffffff;
+}
+
+.back-body {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 12px 16px;
+    justify-content: space-between;
+}
+
+.back-address-block {
+    text-align: center;
+    border-bottom: 1px dashed var(--card-border);
+    padding-bottom: 8px;
+    margin-bottom: 8px;
+}
+
+.back-school-name {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--card-header-bg, #111827);
+    /* using gradient visually falls back to dark */
+    background: var(--card-header-bg);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin: 0 0 4px 0;
+}
+
+.back-school-address,
+.back-school-contact {
+    font-size: 9px;
+    color: #4b5563;
+    margin: 0 0 2px 0;
+    font-weight: 500;
+}
+
+.back-rules-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 8px;
+}
+
+.rules-title {
+    font-size: 10px;
+    font-weight: 700;
+    color: var(--card-text-primary);
+    margin: 0 0 4px 0;
+    text-transform: uppercase;
+}
+
+.back-rules-list {
+    margin: 0;
+    padding-left: 16px;
+    font-size: 8.5px;
+    color: #374151;
+    line-height: 1.4;
+    font-weight: 500;
+}
+
+.back-rules-list li {
+    margin-bottom: 4px;
+}
+
+.back-footer-content {
+    display: flex;
+    justify-content: flex-end;
+    /* push signature to right */
+    padding-bottom: 4px;
+}
+
+.signature-area {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+}
+
+.signature-line {
+    width: 110px;
+    height: 1px;
+    background: var(--card-text-primary);
+    margin-top: 10px;
+    /* buffer if no image */
+}
+
+.signature-area p {
+    font-size: 9px;
+    color: var(--card-text-primary);
+    font-weight: 600;
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.signature-img {
+    height: 35px;
+    width: auto;
+    max-width: 140px;
+    object-fit: contain;
+    margin-bottom: 4px;
+}
+
+/* Landscape and Compact Responsiveness for Back View */
+.id-card-preview.landscape .back-body {
+    padding: 8px 12px;
+}
+
+.id-card-preview.landscape .back-address-block {
+    padding-bottom: 6px;
+    margin-bottom: 6px;
+}
+
+.id-card-preview.landscape .back-school-name {
+    font-size: 12px;
+    margin-bottom: 2px;
+}
+
+.id-card-preview.landscape .back-school-address,
+.id-card-preview.landscape .back-school-contact {
+    font-size: 8px;
+    margin-bottom: 1px;
+}
+
+.id-card-preview.landscape .rules-title {
+    font-size: 9px;
+    margin-bottom: 2px;
+}
+
+.id-card-preview.landscape .back-rules-list {
+    font-size: 8px;
+    padding-left: 12px;
+    line-height: 1.3;
+}
+
+.id-card-preview.landscape .back-rules-list li {
+    margin-bottom: 2px;
+}
+
+.id-card-preview.compact .back-body {
+    padding: 6px 10px;
+}
+
+.id-card-preview.compact .back-address-block {
+    padding-bottom: 4px;
+    margin-bottom: 4px;
+}
+
+.id-card-preview.compact .back-school-name {
+    font-size: 11px;
+    margin-bottom: 2px;
+}
+
+.id-card-preview.compact .back-school-address,
+.id-card-preview.compact .back-school-contact {
+    font-size: 7.5px;
+    margin-bottom: 1px;
+}
+
+.id-card-preview.compact .rules-title {
+    font-size: 8px;
+    margin-bottom: 2px;
+}
+
+.id-card-preview.compact .back-rules-list {
+    font-size: 7.5px;
+    padding-left: 10px;
+    line-height: 1.2;
+}
+
+.id-card-preview.compact .back-rules-list li {
+    margin-bottom: 2px;
+}
+
+.id-card-preview.compact .signature-area p {
+    font-size: 7.5px;
+}
+
+.id-card-preview.compact .signature-line {
+    width: 90px;
+}
+
+.id-card-preview.compact .signature-img {
+    height: 25px;
+}

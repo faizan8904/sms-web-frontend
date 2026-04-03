@@ -284,7 +284,7 @@
    ============================================ */
 .content {
     min-height: 100vh;
-    padding: 88px 32px 32px;
+    padding: 76px 24px 24px;
     background: #f8f7fc;
     transition: margin-left 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
