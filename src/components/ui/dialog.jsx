@@ -1,32 +1,41 @@
 import * as React from "react"
-import * as DialogPrimitive from "@radix-ui/react-dialog"
+import {
+  Root,
+  Trigger,
+  Portal,
+  Overlay,
+  Content,
+  Title,
+  Description,
+  Close,
+} from "@radix-ui/react-dialog"
 
 import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
-import { XIcon } from "lucide-react"
+import { X } from "lucide-react"
 
 function Dialog({
   ...props
 }) {
-  return <DialogPrimitive.Root data-slot="dialog" {...props} />;
+  return <Root data-slot="dialog" {...props} />;
 }
 
 function DialogTrigger({
   ...props
 }) {
-  return <DialogPrimitive.Trigger data-slot="dialog-trigger" {...props} />;
+  return <Trigger data-slot="dialog-trigger" {...props} />;
 }
 
 function DialogPortal({
   ...props
 }) {
-  return <DialogPrimitive.Portal data-slot="dialog-portal" {...props} />;
+  return <Portal data-slot="dialog-portal" {...props} />;
 }
 
 function DialogClose({
   ...props
 }) {
-  return <DialogPrimitive.Close data-slot="dialog-close" {...props} />;
+  return <Close data-slot="dialog-close" {...props} />;
 }
 
 function DialogOverlay({
@@ -34,10 +43,10 @@ function DialogOverlay({
   ...props
 }) {
   return (
-    <DialogPrimitive.Overlay
+    <Overlay
       data-slot="dialog-overlay"
       className={cn(
-        "fixed inset-0 isolate z-50 bg-slate-900/40 duration-100 backdrop-blur-sm data-open:animate-in data-open:fade-in-0 data-closed:animate-out data-closed:fade-out-0",
+        "fixed inset-0 isolate z-50 bg-black/10 duration-100 supports-backdrop-filter:backdrop-blur-xs data-open:animate-in data-open:fade-in-0 data-closed:animate-out data-closed:fade-out-0",
         className
       )}
       {...props} />
@@ -53,7 +62,7 @@ function DialogContent({
   return (
     <DialogPortal>
       <DialogOverlay />
-      <DialogPrimitive.Content
+      <Content
         data-slot="dialog-content"
         className={cn(
           "fixed top-1/2 left-1/2 z-50 grid w-full max-w-[calc(100%-2rem)] -translate-x-1/2 -translate-y-1/2 gap-4 rounded-xl bg-popover p-4 text-sm text-popover-foreground ring-1 ring-foreground/10 duration-100 outline-none sm:max-w-sm data-open:animate-in data-open:fade-in-0 data-open:zoom-in-95 data-closed:animate-out data-closed:fade-out-0 data-closed:zoom-out-95",
@@ -62,18 +71,18 @@ function DialogContent({
         {...props}>
         {children}
         {showCloseButton && (
-          <DialogPrimitive.Close data-slot="dialog-close" asChild>
+          <Close data-slot="dialog-close" asChild>
             <Button 
                 variant="ghost" 
-                className="absolute top-6 right-6 rounded-full w-10 h-10 bg-slate-900/10 hover:bg-slate-900/20 text-slate-900 z-[60] backdrop-blur-md transition-all border border-slate-900/10" 
+                className="absolute top-6 right-6 rounded-full w-10 h-10 bg-slate-900/10 hover:bg-slate-900/20 text-slate-900 z-[60] backdrop-blur-md transition-all border border-slate-900/10 shadow-sm" 
                 size="icon"
             >
-              <XIcon size={20} />
+              <X size={20} />
               <span className="sr-only">Close</span>
             </Button>
-          </DialogPrimitive.Close>
+          </Close>
         )}
-      </DialogPrimitive.Content>
+      </Content>
     </DialogPortal>
   );
 }
@@ -106,9 +115,9 @@ function DialogFooter({
       {...props}>
       {children}
       {showCloseButton && (
-        <DialogPrimitive.Close asChild>
+        <Close asChild>
           <Button variant="outline">Close</Button>
-        </DialogPrimitive.Close>
+        </Close>
       )}
     </div>
   );
@@ -119,7 +128,7 @@ function DialogTitle({
   ...props
 }) {
   return (
-    <DialogPrimitive.Title
+    <Title
       data-slot="dialog-title"
       className={cn("font-heading text-base leading-none font-medium", className)}
       {...props} />
@@ -131,7 +140,7 @@ function DialogDescription({
   ...props
 }) {
   return (
-    <DialogPrimitive.Description
+    <Description
       data-slot="dialog-description"
       className={cn(
         "text-sm text-muted-foreground *:[a]:underline *:[a]:underline-offset-3 *:[a]:hover:text-foreground",

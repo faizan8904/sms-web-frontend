@@ -132,7 +132,10 @@ export default function Teacher() {
                     <h1 className="text-4xl font-black text-slate-900 tracking-tighter">Faculty Management</h1>
                     <p className="text-slate-500 font-medium">Manage and monitor academic staff records across all departments.</p>
                 </div>
-                <button className="flex items-center gap-3 bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white px-8 py-4 rounded-[20px] font-black text-xs uppercase tracking-[0.2em] shadow-xl shadow-purple-100 transition-all active:scale-95 group">
+                <button 
+                    onClick={() => navigate('/teacher/add')}
+                    className="flex items-center gap-3 bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white px-8 py-4 rounded-[20px] font-black text-xs uppercase tracking-[0.2em] shadow-xl shadow-purple-100 transition-all active:scale-95 group"
+                >
                     <Plus size={20} />
                     Add New Faculty
                 </button>

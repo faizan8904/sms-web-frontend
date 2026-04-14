@@ -133,7 +133,10 @@ export default function Staff() {
                     <h1 className="text-4xl font-black text-slate-900 tracking-tighter text-transparent bg-clip-text bg-gradient-to-r from-slate-900 to-slate-600 uppercase">Staff Directory</h1>
                     <p className="text-slate-500 font-medium">Coordinate and manage administrative & maintenance personnel.</p>
                 </div>
-                <button className="flex items-center gap-3 bg-slate-900 hover:bg-black text-white px-8 py-4 rounded-[20px] font-black text-xs uppercase tracking-[0.2em] shadow-xl shadow-slate-200 transition-all active:scale-95 group">
+                <button 
+                    onClick={() => navigate('/staff/add')}
+                    className="flex items-center gap-3 bg-slate-900 hover:bg-black text-white px-8 py-4 rounded-[20px] font-black text-xs uppercase tracking-[0.2em] shadow-xl shadow-slate-200 transition-all active:scale-95 group"
+                >
                     <Plus size={20} />
                     Register New Staff
                 </button>
